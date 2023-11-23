@@ -91,9 +91,8 @@ const userRecipe = async () => {
 const addImage = async () => {
   const fileInput = document.getElementById("image-input");
   const formData = new FormData();
-  console.log(fileInput);
 
-  for (let i = 0; i < fileInput.files.lenght; i++) {
+  for (let i = 0; i < fileInput.files.length; i++) {
     formData.append("images", fileInput.files[i]);
   }
 
@@ -102,6 +101,9 @@ const addImage = async () => {
       method: "post",
       body: formData,
     });
+    if (!response.ok) {
+      throw new Error("HTTP Error: " + response.status);
+    }
   } catch (error) {
     console.log("Error when loading the page: " + error.message);
   }
