@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div
+      h2(id="recipe-name")
+      h3 Ingredients
+      ul(id="ingredients")
+      h3 Instructions
+      ul(id="instructions")
+
+
+  div
+    input(type="text" id="name-text")
+    h4 Ingredients
+    textarea(id="ingredients-text")
+    button(id="add-ingredient" type="button") Add ingredient
+    h4 Instructions
+    textarea(id="instructions-text")
+    button(id="add-instruction" type="button") Add instruction
+    br
+    br
+    input(type="file" id="image-input")
+    br
+    br
+    button(id="submit" type="submit") Submit
+
