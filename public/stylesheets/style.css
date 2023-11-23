@@ -3,15 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-nav {
-  background-color: #ffcccb;
-  padding: 20px;
-}
-
-.btn {
-  background-color: aquamarine;
-}
-
 a {
   color: #212c30;
 }
