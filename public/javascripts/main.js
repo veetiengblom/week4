@@ -68,7 +68,7 @@ const userRecipe = async () => {
     console.log(obj);
 
     try {
-      addImage();
+      //addImage();
       const response = await fetch("/recipe/", {
         method: "post",
         headers: {
@@ -94,7 +94,7 @@ const addImage = async () => {
   const fileInput = document.getElementById("image-input");
   const formData = new FormData();
 
-  listOfFiles = fileInput.files;
+  const listOfFiles = fileInput.files;
   listOfFiles.forEach((element) => {
     formData.append("images", element);
   });
