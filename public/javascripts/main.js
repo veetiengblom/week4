@@ -65,10 +65,9 @@ const userRecipe = async () => {
       instructions: userInstructions,
       ingredients: userIngredients,
     };
-    console.log(obj);
 
     try {
-      //addImage();
+      addImage();
       const response = await fetch("/recipe/", {
         method: "post",
         headers: {
@@ -81,7 +80,6 @@ const userRecipe = async () => {
         throw new Error("HTTP Error: " + response.status);
       }
       const data = await response.json();
-      console.log(data);
       displayRecipe(data);
     } catch (error) {
       console.log("Error when loading the page: " + error.message);
@@ -93,11 +91,11 @@ const userRecipe = async () => {
 const addImage = async () => {
   const fileInput = document.getElementById("image-input");
   const formData = new FormData();
+  console.log(fileInput);
 
-  const listOfFiles = fileInput.files;
-  listOfFiles.forEach((element) => {
-    formData.append("images", element);
-  });
+  for (let i = 0; i < fileInput.files.lenght; i++) {
+    formData.append("images", fileInput.files[i]);
+  }
 
   try {
     const response = await fetch("/images", {
